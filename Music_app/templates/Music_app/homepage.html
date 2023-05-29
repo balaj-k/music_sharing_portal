@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+</head>
+<body>
+{% extends 'Music_app/base.html' %}
+
+{% block content %}
+  <h2>Welcome, {{ user.username }}</h2>
+  <h3>Your Music Files:</h3>
+  {% if music_files %}
+    <ul>
+      {% for music_file in music_files %}
+        <li>{{ music_file }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No music files found.</p>
+  {% endif %}
+{% endblock %}
+</body>
+</html>
